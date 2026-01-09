@@ -1,0 +1,40 @@
+#Задача 1
+n = int(input())
+numbers = list(range(1, n + 1))
+print(numbers)
+print(f"Сумма элементов: {sum(numbers)}")
+
+#Задача 2
+n = int(input())
+while n < 2 or n % 2 != 0:
+    print("Число должно быть четным и не менее 2")
+    n = int(input())
+even_numbers = list(range(2, n + 1, 2))
+print(even_numbers)
+print(f"Длина списка: {len(even_numbers)}")
+
+#Задача 3
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]
+
+print(f"Длина списка: {len(primes)}")
+
+print(f"Сумма: {sum(primes)}")
+print(f"Минимум: {min(primes)}")
+print(f"Максимум: {max(primes)}")
+
+print(f"Последний элемент: {primes[-1]}")
+
+print(f"Список в обратном порядке: {primes[::-1]}")
+
+if 5 in primes and 17 in primes:
+    print("YES")
+else:
+    print("NO")
+print(f"Без первого и последнего: {primes[1:-1]}")
+
+#Задача 4
+n = int(input())
+strings = []
+for i in range(n):
+    strings.append(input())
+print(strings[::-1])
