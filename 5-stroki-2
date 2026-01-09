@@ -1,0 +1,93 @@
+#Задача 1
+text = input()
+digit_count = sum(1 for char in text if char.isdigit())
+print(f"Количество цифр в строке: {digit_count}")
+
+#Задача 2
+text = input()
+price_per_char = 0.60  # 60 копеек
+total_kopecks = len(text) * price_per_char
+rubles = int(total_kopecks // 1)
+kopecks = int((total_kopecks % 1) * 100)
+print(f"{rubles} руб. {kopecks:02d} коп.")
+
+#Задача 3
+word = input()
+if word.endswith('es'):
+    result = word[:-2] + 'e'
+elif word.endswith('y') and len(word) > 1:
+    consonants = 'бвгджзйклмнпрстфхцчшщbcdfghjklmnpqrstvwxyz'
+    if word[-2] in consonants:
+        result = word[:-1] + 'ies'
+    else:
+        result = word + 's'
+elif word.endswith(('ch', 'x', 'sh', 'ss', 's')):
+    result = word + 'es'
+elif word.endswith('f'):
+    result = word[:-1] + 'ves'
+elif word.endswith('fe'):
+    result = word[:-2] + 'ves'
+else:
+    result = word + 's'
+print(result)
+
+#Задача 4
+n = int(input())
+
+for i in range(1, n + 1):
+    comment = input()
+    if comment.strip() == "":
+        print(f"{i}: COMMENT SHOULD BE DELETED")
+    else:
+        print(f"{i}: {comment}")
+        
+#Задача 5
+letters = "АВЕКМНОРСТУХ"
+number = input().strip()
+
+if len(number) not in (8, 9):
+    print("NO")
+else:
+    if len(number) == 8:
+        parts = [number[0], number[1:4], number[4:6], number[6:8]]
+    else:  # 9 символов
+        parts = [number[0], number[1:4], number[4:6], number[6:9]]
+    valid = True
+    
+    # Первая буква
+    if parts[0] not in letters:
+        valid = False
+    
+    # Первые три цифры
+    if not parts[1].isdigit() or len(parts[1]) != 3:
+        valid = False
+    
+    # Две буквы
+    if len(parts[2]) != 2 or parts[2][0] not in letters or parts[2][1] not in letters:
+        valid = False
+    
+    # Последние цифры 2 или 3
+    if not parts[3].isdigit() or len(parts[3]) not in (2, 3):
+        valid = False
+    
+    print("YES" if valid else "NO")
+
+#Задача 6
+nickname = input()
+if not nickname.startswith('@'):
+    print("Incorrect")
+elif not (5 <= len(nickname) <= 15):
+    print("Incorrect")
+elif not nickname[1:].isalnum() or not nickname[1:].islower():
+    print("Incorrect")
+else:
+    print("Correct")
+    
+#Задача 8
+a = int(input())
+b = int(input())
+sum_of_cubes = a**3 + b**3
+cube_of_sum = (a + b)**3
+print(f"Для чисел {a} и {b}:")
+print(f"Сумма кубов: {a}**3 + {b}**3 = {sum_of_cubes}")
+print(f"Куб суммы: ({a} + {b})**3 = {cube_of_sum}")
