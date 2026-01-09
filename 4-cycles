@@ -1,0 +1,144 @@
+#Задача 1
+n = int(input())
+for _ in range(n):
+    print('*' * 19)
+    
+#Задача 2
+m = int(input())
+n = int(input())
+if m <= n:
+    for i in range(m, n + 1):
+        print(i)
+else:
+    for i in range(m, n - 1, -1):
+        print(i)
+        
+#Задача 3
+m = int(input())
+n = int(input())
+for i in range(m, n + 1):
+    if i % 17 == 0 or i % 10 == 9 or (i % 3 == 0 and i % 5 == 0):
+        print(i)
+        
+#Задача 4
+product = 1
+for i in range(10):
+    num = int(input())
+    if num != 0:
+        product *= num
+print(product)
+
+#Задача 5
+n = int(input())
+d_sum = 0
+for i in range(1, n + 1):
+    if n % i == 0:
+        d_sum += i
+print(d_sum)
+
+#Задача 6
+all_even = True
+for _ in range(10):
+    num = int(input())
+    if num % 2 != 0:
+        all_even = False
+if all_even:
+    print("YES")
+else:
+    print("NO")
+    
+#Задача 7
+count = 0
+while True:
+    word = input()
+    if word in ("стоп", "хватит", "достаточно"):
+        break
+    count += 1
+print(count)
+
+#Задача 8
+while True:
+    passport = input("Введите номер паспорта (9 символов): ")
+    if len(passport) == 9:
+        print("Номер паспорта принят.")
+        break
+    else:
+        print(f"Неверный формат! Введено {len(passport)} символов, должно быть 9.")
+        
+#Задача 9
+total = 0
+while True:
+    num = int(input())
+    if num < 0:
+        break
+    total += num
+print(total)
+
+#Задача 10
+count_fives = 0
+while True:
+    grade = int(input())
+    if grade < 0 or grade > 5:
+        break
+    if grade == 5:
+        count_fives += 1
+print(count_fives)
+
+#Задача 11
+n = int(input())
+if n == 0:
+    print(0)
+else:
+    while n > 0:
+        print(n % 10)
+        n //= 10
+        
+#Задача 12
+n = int(input())
+max_digit = 0
+min_digit = 9
+while n > 0:
+    digit = n % 10
+    if digit > max_digit:
+        max_digit = digit
+    if digit < min_digit:
+        min_digit = digit
+    n //= 10
+print(f"Максимальная цифра: {max_digit}")
+print(f"Минимальная цифра: {min_digit}")
+
+#Задача 13
+n = int(input())
+digits_sum = 0
+digits_count = 0
+digits_product = 1
+first_digit = None
+
+original_n = n
+
+while n > 0:
+    digit = n % 10
+    digits_sum += digit
+    digits_count += 1
+    digits_product *= digit
+    n //= 10
+    if n == 0:
+        first_digit = digit
+        
+last_digit = original_n % 10
+
+print(f"Сумма цифр: {digits_sum}")
+print(f"Количество цифр: {digits_count}")
+print(f"Произведение цифр: {digits_product}")
+print(f"Среднее арифметическое: {digits_sum / digits_count}")
+print(f"Первая цифра: {first_digit}")
+print(f"Сумма первой и последней цифры: {first_digit + last_digit}")
+
+#Задача 14
+n = int(input())
+current_num = 1
+for i in range(1, n + 1):
+    for j in range(i):
+        print(current_num, end=" ")
+        current_num += 1
+    print()
