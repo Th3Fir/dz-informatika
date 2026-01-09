@@ -1,0 +1,44 @@
+#Задача 1
+keywords = ['False', 'True', 'None', 'and', 'with', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'try', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'while', 'yield']
+new_keywords = [word[1:] for word in keywords]
+print(new_keywords)
+
+#Задача 2
+keywords = ['False', 'True', 'None', 'and', 'with', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'try', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'while', 'yield']
+lengths = [len(word) for word in keywords]
+print(lengths)
+
+#Задача 3
+keywords = ['False', 'True', 'None', 'and', 'with', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'try', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'while', 'yield']
+new_keywords = [word for word in keywords if len(word) >= 5]
+print(new_keywords)
+
+#Задача 4
+palindromes = [num for num in range(100, 1001) if str(num) == str(num)[::-1]]
+print(palindromes)
+
+#Задача 5
+n = int(input())
+squares = [i ** 2 for i in range(1, n + 1)]
+for square in squares:
+    print(square)
+    
+#Задача 6
+numbers = input().split()
+cubes = [int(num) ** 3 for num in numbers]
+print(*cubes)
+
+#Задача 7
+words = input().split()
+for word in words:
+    print(word)
+    
+#Задача 8
+text = input()
+digits = [char for char in text if char.isdigit()]
+print(''.join(digits))
+
+#Задача 9
+numbers = input().split()
+result = [int(num) ** 2 for num in numbers if int(num) % 2 == 0 and (int(num) ** 2) % 10 != 4]
+print(*result)
